@@ -14,9 +14,6 @@ case class HydrothermalVent(begin: (Int, Int), end: (Int, Int)) {
   def isHorizontal: Boolean =
     (begin._2 == end._2)
 
-  def isDiagonal: Boolean =
-    Math.abs(begin._1 - begin._2) == Math.abs(end._1 - end._2)
-
   def getPoints: List[(Int, Int)] = {
     if (this.isVertical) {
       val min = Math.min(begin._2, end._2)
